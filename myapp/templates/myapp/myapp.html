@@ -8,4 +8,19 @@ Home page
 
 <h1>Myapp | Home page</h1>
 
+
+<div class='grid grid-cols-3 gap-4'>
+{% for V in Var %}
+ <div class='V-item'>
+   <img src="{{ V.image.url }}" alt="{{ V.name }}">
+   <h3>{{ V.name }}</h3>
+    test
+
+ </div>
+
+
+{% endfor %}
+</div>
+
 {% endblock %}
+
