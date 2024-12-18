@@ -12,6 +12,7 @@ class varity(models.Model):
     image = models.ImageField(upload_to='app')
     date_added = models.DateTimeField(default=timezone.now)
     type = models.CharField(max_length=2,choices=Choice)
+    description = models.TextField(default='')
     def __str__(self):
         return self.name
 

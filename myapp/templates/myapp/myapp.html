@@ -1,26 +1,32 @@
 {% extends "layout.html" %}
 
 {% block nav %}
-Home page
+app detail page
 {% endblock %}
 
 {% block content %}
 
-<h1>Myapp | Home page</h1>
-
+<h1>Myapp  | Home Page</h1>
 
 <div class='grid grid-cols-3 gap-4'>
-{% for V in Var %}
- <div class='V-item'>
-   <img src="{{ V.image.url }}" alt="{{ V.name }}">
-   <h3>{{ V.name }}</h3>
-    test
+  {% for V in Var %}
+   <div class='V-item'>
+     <img src="{{ V.image.url }}" alt="{{ V.name }}">
+     <h3>{{ V.name }}</h3>
+     <a href="{% url 'detail' V.id %}">
+      <button type= "button"
+      class="rounded-full bg-orange-600 text-black p-4"
+      >
+      {{ V.type }} - {{ V.id }}
 
- </div>
+       </button>
+    </a>
 
-
-{% endfor %}
+   </div>
+  
+  
+  
+  
+  {% endfor %}
 </div>
-
-{% endblock %}
-
+{% endblock %} 
