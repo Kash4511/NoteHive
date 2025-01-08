@@ -8,25 +8,17 @@ app detail page
 
 <h1>Myapp  | Home Page</h1>
 
-<div class='grid grid-cols-3 gap-4'>
+<div>
   {% for V in Var %}
-   <div class='V-item'>
+   <div>
      <img src="{{ V.image.url }}" alt="{{ V.name }}">
      <h3>{{ V.name }}</h3>
      <a href="{% url 'detail' V.id %}">
-      <button type= "button"
-      class="rounded-full bg-orange-600 text-black p-4"
-      >
+      <button type="button">
       {{ V.type }} - {{ V.id }}
-
        </button>
     </a>
-
    </div>
-  
-  
-  
-  
   {% endfor %}
 </div>
 {% endblock %} 

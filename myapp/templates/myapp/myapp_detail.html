@@ -10,17 +10,14 @@ app detail page
 <h3>{{V.item}}</h3>
 <h3>{{V.description}}</h3>
 
-<div class='grid grid-cols-3 gap-4'>
+<div>
 {% for item in Var %}
-  <div class="{{ item.item }}">
+  <div>
     <a href="{% url 'myapp' item.id %}">
-      <button type= "button"
-      class="rounded-full bg-stone-400 text-black p-4"
-      >
+      <button type="button">
       {{ item.type }} 
        </button>
     </a>
-
  </div>
  {% endfor %}
 </div>

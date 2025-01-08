@@ -11,4 +11,7 @@ def myapp_detail(request, V_ID):
     V = get_object_or_404(varity, pk=V_ID)
     return render(request, 'myapp/myapp_detail.html', {'V': V})
 
+def index(request):
+    return render(request, 'index.html')
+
 
