@@ -1,27 +1,22 @@
 <h1>Your Notes</h1>
-
 <a href="{% url 'create_note' %}">Add New Note</a>
-
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
 <ul>
-
     {% for note in notes %}
-
         <li>
-
             <h3>{{ note.title }}</h3>
-
             <p>{{ note.text }}</p>
-
             <small>Created on {{ note.created_at }}</small>
-
+            <form action="{% url 'delete_note' note.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
         </li>
-
     {% endfor %}
-
 </ul>
-
 {% if notes|length == 0 %}
-
     <p>No notes yet. <a href="{% url 'create_note' %}">Create one now!</a></p>
-
 {% endif %}

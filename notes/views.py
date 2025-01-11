@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.shortcuts import redirect
 # Create your views here.
 
@@ -20,3 +20,11 @@ def create_note_view(request):
         return redirect('notes_list')  # Redirect to the notes list view
 
     return render(request, 'create_note.html')
+
+@login_required
+def delete_note_view(request, note_id):
+    note = get_object_or_404(Note, id=note_id, user=request.user)  # Ensure the note belongs to the logged-in user
+    if request.method == 'POST':
+        note.delete()  # Delete the note
+        return redirect('notes_list')  # Redirect to the notes list view
+    return render(request, 'delete_note.html', {'note': note})  # Render a confirmation page
