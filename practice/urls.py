@@ -4,14 +4,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('index/', views.index, name='index'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', views.registration_view, name='register'),
     path('notes/', include('notes.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
-    path('test/', views.test , name = 'test'),
+    path('', views.test , name = 'test')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
