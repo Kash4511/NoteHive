@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Jost, sans-serif;
+      background: linear-gradient(180deg, #DAD6D6 0%, #6C6C6C 100%);
+      background-image: url("https://via.placeholder.com/1440x1024");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      position: relative;
+      width: 1440px;
+      height: 1024px;
+      margin: 0 auto;
+    }
+
+    .heading-main {
+      position: absolute;
+      top: 346px;
+      left: 158px;
+      font-size: 80px;
+      font-weight: 700;
+      color: black;
+    }
+
+    .heading-sub {
+      position: absolute;
+      top: 467px;
+      left: 158px;
+      font-size: 70px;
+      font-weight: 600;
+      color: black;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 326px;
+      height: 70px;
+      background: black;
+      border-radius: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: 500;
+      text-decoration: none;
+      position: absolute;
+    }
+
+    .button.login {
+      top: 77px;
+      left: 1061px;
+    }
+
+    .button.register {
+      top: 628px;
+      left: 158px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 81px;
+      left: 85px;
+      width: 331px;
+      height: 75px;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 50px;
+      position: absolute;
+      top: 82px;
+      left: 700px;
+      background: black;
+      padding: 10px 20px;
+      border-radius: 30px;
+    }
+
+    .navbar-item {
+      color: white;
+      font-size: 32px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 5px 15px;
+    }
+
+    .navbar-item:hover {
+      background: #444;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading-main">WHERE YOUR NOTES</div>
+    <div class="heading-sub">FIND PURPOSE</div>
+
+    <a href="{% url 'login' %}" class="button login">Login</a>
+    <a href="#" class="button register">Register</a>
+
+    <img src="{% static 'images/Logo.png' %}" alt="Logo" class="logo">
+
+    <div class="navbar">
+      <a href="#" class="navbar-item">Home</a>
+      <a href="#" class="navbar-item">About</a>
+      <a href="#" class="navbar-item">Contact</a>
+    </div>
+  </div>
+</body>
+</html> 

@@ -11,6 +11,7 @@ urlpatterns = [
     path('accounts/register/', views.registration_view, name='register'),
     path('notes/', include('notes.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
+    path('test/', views.test , name = 'test'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
