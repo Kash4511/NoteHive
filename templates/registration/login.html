@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     Login Page
 {% endblock %}
 
 {% block content %}
+    
     <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         {{ form.as_p }}
