@@ -39,24 +39,24 @@
             <h3>Dashboard</h3>
         </a>
 
-        
-        <a href="#" class="{% if request.resolver_match.url_name == 'weather_forecast' %}active{% endif %}">
+<!-- Sidebar -->
+        <a href="{% url 'notes_list' %}" class="{% if request.resolver_match.url_name == 'notes_list' %}active{% endif %}">
             <span class="material-symbols-sharp">cloud</span>
-            <h3>Weather Forecast</h3>
+            <h3>Notes List</h3>
         </a>
         
         <a href="#" class="{% if request.resolver_match.url_name == 'inventory_report' or request.resolver_match.url_name == 'add_product' %}active{% endif %}">
             <span class="material-symbols-sharp">inventory</span>
-            <h3>Inventory Management</h3>
+            <h3></h3>
         </a>
         <a href="#" class="{% if request.resolver_match.url_name == 'crop_analysis' %}active{% endif %}">
             <span class="material-symbols-sharp">search_insights</span>
-            <h3>Market Insights</h3>
+            <h3></h3>
         </a>  
 
         <a href="#" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
             <span class="material-symbols-sharp">inventory_2</span>
-            <h3>Crop Disease Detection</h3>
+            <h3></h3>
         </a>
         
         
